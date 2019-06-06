@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
+
+    $aws = AWS::createClient('sns');
+
+    $aws->publish([
+        'Message' => 'Hello World!',
+        'TargetArn' => 'arn:aws:sns:eu-west-1:310005059065:sns_new_sale'
+    ]);
+
     return view('welcome');
 });
