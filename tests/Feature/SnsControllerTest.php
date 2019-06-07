@@ -8,14 +8,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SnsControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public function testkSnsController()
     {
-        $response = $this->get('/');
+        $response = $this->json('POST', '/api/aws/sns/snsProjectTestTopic', ['test' => 'test']);
 
         $response->assertStatus(200);
     }
