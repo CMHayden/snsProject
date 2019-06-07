@@ -16,9 +16,9 @@ class SnsController extends Controller
 
         $aws->publish([
             'Message' => $json_data,
-            'TargetArn' => 'arn:aws:sns:eu-west-1:310005059065:sns_new_sale'
+            'TargetArn' => 'arn:aws:sns:eu-west-1:310005059065:snsProjectTestTopic'
         ]);
 
-        return 'Success';
+        return 'success';
     }
 }
